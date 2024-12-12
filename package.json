@@ -1,0 +1,24 @@
+{
+  "name": "mypizza",
+  "version": "0.1.0",
+  "description": "Gestione pizzerie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "chiara": "echo 'ciao mondo'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiaconso/javaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiaconso/javaScript/issues"
+  },
+  "homepage": "https://github.com/chiaconso/javaScript#readme",
+  "dependencies": {
+    "simple-tts-mp3": "^1.1.0",
+    "xml-js": "^1.6.11"
+  }
+}
