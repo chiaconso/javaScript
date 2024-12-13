@@ -10,13 +10,12 @@
     <script type="text/javascript">
 
 let listaNumeri = [3, 5, 7, 9, 13];
-let somma = 0;
+let reverse = [];
 
-for (let i = 0; i < listaNumeri.length; i++) {
-    somma += listaNumeri[i];
+for (let i = listaNumeri.length - 1; i >= 0; i--) {
+    reverse.push(listaNumeri[i]);
 }
-
-console.log("La somma dei numeri è:", somma);
+console.log(reverse);
 
     </script>
    
