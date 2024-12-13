@@ -9,8 +9,13 @@
 
     <script type="text/javascript">
 
-let word = prompt ('Inserisci una parola');
-console.log(word.length);
+let parola;
+
+do {
+    parola = prompt("Inserisci una parola (almeno 5 caratteri):"); 
+} while (parola.length < 5);
+
+console.log("La parola inserita è: " + parola);
  
 
 
