@@ -16,10 +16,9 @@ age: 25,
 city: "Roma"
 };
 
-person.job = "Ingegnere";
-
-console.log(person.job);
-
+for (let property in person) {
+    console.log(property + ':' + person[property]);
+}
 
 
     </script>
