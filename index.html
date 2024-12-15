@@ -10,14 +10,11 @@
     <script type="text/javascript">
 
 
-let person = {
-name: "Mario",
-age: 25,
-city: "Roma"
-};
-
-for (let property in person) {
-    console.log(property + ':' + person[property]);
+function outerFunction(x) {
+    function innerFunction(y) {
+        return x + y;
+    }
+    return innerFunction;
 }
 
 
