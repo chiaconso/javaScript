@@ -10,12 +10,16 @@
     <script type="text/javascript">
 
 
-function outerFunction(x) {
+function outerFunction(x, initialValue) {
+    let result = initialValue;
+    
     function innerFunction(y) {
-        return x + y;
+        result += y;
+        return result;
     }
     return innerFunction;
 }
+  
 
 
     </script>
