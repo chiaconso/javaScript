@@ -10,14 +10,18 @@
     <script type="text/javascript">
 
 
-function outerFunction(x, initialValue) {
-    let result = initialValue;
-    
-    function innerFunction(y) {
-        result += y;
-        return result;
+function createCounter () {
+    let count = 0;
+    return {
+        increment: function() {
+            count += 1;
+            return count;
+        },
+        decrement: function() {
+            count -= 1;
+            return count;
+        }
     }
-    return innerFunction;
 }
   
 
