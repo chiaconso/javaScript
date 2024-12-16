@@ -10,19 +10,17 @@
     <script type="text/javascript">
 
 
-function createCounter () {
-    let count = 0;
-    return {
-        increment: function() {
-            count += 1;
-            return count;
-        },
-        decrement: function() {
-            count -= 1;
-            return count;
-        }
-    }
+const student = {
+    name: "Chiara",
+    age: 27,
+    grade: "A",
+    school: "Oxford University"
 }
+
+const keys = Object.keys(student);
+console.log(keys);
+
+
   
 
 
