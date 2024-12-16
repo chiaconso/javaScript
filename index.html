@@ -10,17 +10,21 @@
     <script type="text/javascript">
 
 
-const numbers = [1, 2, 3, 4, 5];
+const students = [
+    {name: "Alice", grade: 85},
+    {name: "Bob", grade: 50},
+    {name: "Charlie", grade: 75},
+    {name: "David", grade: 45},
+    {name: "Eva", grade: 90}
+];
 
-numbers.forEach(number => {
-    console.log(number * 2);
-});
+const passedStudents = students.filter(student => student.grade >= 60);
 
-const squaredNumbers = numbers.map(number => number * number);
-console.log(squaredNumbers); 
+const failedStudent = students.find(student => student.grade < 60);
 
+console.log("Passed Students:", passedStudents);
+console.log("First Failed Student:", failedStudent);
 
-  
 
 
     </script>
