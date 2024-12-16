@@ -10,15 +10,14 @@
     <script type="text/javascript">
 
 
-const student = {
-    name: "Chiara",
-    age: 27,
-    grade: "A",
-    school: "University of Oxford"
-}
+const numbers = [1, 2, 3, 4, 5];
 
-const values = Object.values(student);
-console.log(values);
+numbers.forEach(number => {
+    console.log(number * 2);
+});
+
+const squaredNumbers = numbers.map(number => number * number);
+console.log(squaredNumbers); 
 
 
   
