@@ -10,15 +10,21 @@
     <script type="text/javascript">
 
 
-const student = {
-    name: "Chiara",
-    age: 27,
-    grade: "A",
-    school: "University of Oxford"
-}
+const expenses = [120, 50, 200, 30, 75];
 
-const entries = Object.entries(student);
-console.log(entries); 
+const totalExpenses = expenses.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+const words = [
+    "banana",
+    "apple",
+    "cherry",
+    "date"
+];
+
+const sortedWords = words.sort();
+
+console.log("Total Expenses:", totalExpenses);
+console.log("Sorted Words:", sortedWords);
 
 
 
