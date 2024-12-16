@@ -10,20 +10,15 @@
     <script type="text/javascript">
 
 
-const students = [
-    {name: "Alice", grade: 85},
-    {name: "Bob", grade: 50},
-    {name: "Charlie", grade: 75},
-    {name: "David", grade: 45},
-    {name: "Eva", grade: 90}
-];
+const student = {
+    name: "Chiara",
+    age: 27,
+    grade: "A",
+    school: "University of Oxford"
+}
 
-const passedStudents = students.filter(student => student.grade >= 60);
-
-const failedStudent = students.find(student => student.grade < 60);
-
-console.log("Passed Students:", passedStudents);
-console.log("First Failed Student:", failedStudent);
+const entries = Object.entries(student);
+console.log(entries); 
 
 
 
