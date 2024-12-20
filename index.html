@@ -6,31 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-
+    
     <script type="text/javascript">
-
-
-const expenses = [120, 50, 200, 30, 75];
-
-const totalExpenses = expenses.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-const words = [
-    "banana",
-    "apple",
-    "cherry",
-    "date"
-];
-
-const sortedWords = words.sort();
-
-console.log("Total Expenses:", totalExpenses);
-console.log("Sorted Words:", sortedWords);
-
-
-
+        
+        class Automobile {
+            constructor(marca, modello, anno) {
+                this.marca = marca
+                this.modello = modello
+                this.anno = anno
+            }
+            
+            descrizione() {
+                return `Questa è una ${this.marca} ${this.modello} del ${this.anno}` 
+            }
+            
+        }
+        const auto = new Automobile("Toyota", "Corolla", 2020);
+        console.log(auto.descrizione());
+        
+        
+        
     </script>
-   
-
-
 </body>
 </html>
