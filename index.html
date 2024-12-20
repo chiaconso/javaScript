@@ -10,19 +10,29 @@
     <script type="text/javascript">
         
         class Automobile {
-            constructor(marca, modello, anno) {
+            constructor(marca, modello, anno, km) {
                 this.marca = marca
                 this.modello = modello
                 this.anno = anno
+                this.km = km
             }
             
             descrizione() {
                 return `Questa è una ${this.marca} ${this.modello} del ${this.anno}` 
             }
+
+            aggiungiChilometri(km) {
+                this.km = km
+            }
+            mostraChilometraggio() {
+                return this.km
+            }
             
         }
-        const auto = new Automobile("Toyota", "Corolla", 2020);
+        const auto = new Automobile("Toyota", "Corolla", 2020, 0);
         console.log(auto.descrizione());
+        auto.aggiungiChilometri(1000);
+        console.log(auto.mostraChilometraggio());
         
         
         
