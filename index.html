@@ -10,30 +10,47 @@
     <script type="text/javascript">
         
         class Automobile {
-            constructor(marca, modello, anno, km) {
+            constructor(marca, modello, anno, chilometraggio = 0) {
                 this.marca = marca
-                this.modello = modello
-                this.anno = anno
-                this.km = km
+                this.modello = modello 
+                this.anno = anno 
+                this.chilometraggio = chilometraggio
             }
-            
+
             descrizione() {
-                return `Questa è una ${this.marca} ${this.modello} del ${this.anno}` 
+                return `Questa è una ${this.marca} ${this.modello} del ${this.anno}.`;
             }
 
             aggiungiChilometri(km) {
-                this.km = km
+                this.chilometraggio += km;
             }
+
             mostraChilometraggio() {
-                return this.km
+                return `Il chilometraggio attuale è di ${this.chilometraggio} km.`;
             }
-            
         }
-        const auto = new Automobile("Toyota", "Corolla", 2020, 0);
-        console.log(auto.descrizione());
-        auto.aggiungiChilometri(1000);
-        console.log(auto.mostraChilometraggio());
-        
+
+        class Elettrica extends Automobile {
+            constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
+                super(marca, modello, anno, chilometraggio);
+                this.autonomia = autonomia;
+            }
+
+            descrizione() {
+                return `${super.descrizione()} Ha un'autonomia di ${this.autonomia} km.`;
+            }
+
+            ricarica(km) {
+                this.autonomia += km;
+            }
+        }
+
+        const autoElettrica = new Elettrica("Tesla", "Model 3", 2023, 10000, 350);
+        autoElettrica.aggiungiChilometri(200);
+        autoElettrica.ricarica(50);
+        console.log(autoElettrica.descrizione());
+        console.log(autoElettrica.mostraChilometraggio());
+
         
         
     </script>
