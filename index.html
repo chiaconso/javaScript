@@ -30,6 +30,10 @@
             }
         }
 
+        Automobile.prototype.saluta = function() {
+            return `Ciao! Sono una ${this.marca} ${this.modello}.`;
+        };
+
         class Elettrica extends Automobile {
             constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
                 super(marca, modello, anno, chilometraggio);
@@ -45,11 +49,12 @@
             }
         }
 
+        const auto = new Automobile("Fiat", "Panda", 2020);
         const autoElettrica = new Elettrica("Tesla", "Model 3", 2023, 10000, 350);
         autoElettrica.aggiungiChilometri(200);
         autoElettrica.ricarica(50);
-        console.log(autoElettrica.descrizione());
-        console.log(autoElettrica.mostraChilometraggio());
+        console.log(auto.saluta());
+        console.log(autoElettrica.saluta());
 
         
         
