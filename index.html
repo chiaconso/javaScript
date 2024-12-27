@@ -10,28 +10,38 @@
     <script type="text/javascript">
         
         class Automobile {
-            constructor(marca, modello, annoDiFabbricazione) {
+            constructor(marca, modello, chilometraggio) {
                 this.marca = marca
                 this.modello = modello 
-                this.annoDiFabbricazione = annoDiFabbricazione
+                this.chilometraggio = chilometraggio
             }
-            
-            #calcolaEtà() {
-                const annoCorrente = new Date().getFullYear();
-                return annoCorrente - this.annoDiFabbricazione;
+
+            _controllaChilometri() {
+                if (this.chilometraggio > 100000) {
+                    console.log("Avviso: Chilometraggio superiore a 100.000 km!");
+                }
             }
-            
-            mostraEtà() {
-                const età = this.#calcolaEtà();
-                console.log(`L'età dell'automobile ${this.marca} ${this.modello} è di ${età} anni.`);
+
+            getChilometraggio() {
+                return this.chilometraggio;
             }
         }
 
-        const auto = new Automobile("Fiat", "Panda", 2015);
-        auto.mostraEtà();
+
+        class Elettrica extends Automobile {
+            constructor(marca, modello, chilometraggio) {
+                super(marca, modello, chilometraggio);
+            }
+
+            verificaChilometraggio() {
+                this._controllaChilometri();
+            }
+        }
+
         
-        
-        
+        const autoElettrica = new Elettrica("Tesla", "Model 3", 120000);
+        autoElettrica.verificaChilometraggio();
+
         
         
     </script>
