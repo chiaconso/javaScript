@@ -10,38 +10,31 @@
     <script type="text/javascript">
         
         class Automobile {
-            constructor(marca, modello, chilometraggio) {
-                this.marca = marca
-                this.modello = modello 
+            constructor(chilometraggio) {
                 this.chilometraggio = chilometraggio
             }
-
+            
             _controllaChilometri() {
                 if (this.chilometraggio > 100000) {
                     console.log("Avviso: Chilometraggio superiore a 100.000 km!");
                 }
             }
-
-            getChilometraggio() {
-                return this.chilometraggio;
-            }
+            
+            static confrontaChilometraggio (auto1, auto2) {
+                if (auto1.chilometraggio > auto2.chilometraggio) {
+                    return `L'auto 1 ha un chilometraggio maggiore di ${auto1.chilometraggio} km.`;
+                } else if(auto1.chilometraggio < auto2.chilometraggio) {
+                    return `L'auto 2 ha un chilometraggio maggiore di ${auto2.chilometraggio} km.`; 
+                } else {
+                    return "Le due automobili hanno lo stesso chilometraggio.";
+                }
+            }  
         }
-
-
-        class Elettrica extends Automobile {
-            constructor(marca, modello, chilometraggio) {
-                super(marca, modello, chilometraggio);
-            }
-
-            verificaChilometraggio() {
-                this._controllaChilometri();
-            }
-        }
-
         
-        const autoElettrica = new Elettrica("Tesla", "Model 3", 120000);
-        autoElettrica.verificaChilometraggio();
-
+        const auto1 = new Automobile(120000);
+        const auto2 = new Automobile(95000);
+        console.log(Automobile.confrontaChilometraggio(auto1, auto2));
+        
         
         
     </script>
