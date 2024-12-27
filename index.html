@@ -10,30 +10,26 @@
     <script type="text/javascript">
         
         class Automobile {
-            constructor(chilometraggio) {
-                this.chilometraggio = chilometraggio
-            }
+            #contatoreChiamate = 0;
             
-            _controllaChilometri() {
-                if (this.chilometraggio > 100000) {
-                    console.log("Avviso: Chilometraggio superiore a 100.000 km!");
-                }
+            accendiMotore() {
+                this.#contatoreChiamate++;
             }
-            
-            static confrontaChilometraggio (auto1, auto2) {
-                if (auto1.chilometraggio > auto2.chilometraggio) {
-                    return `L'auto 1 ha un chilometraggio maggiore di ${auto1.chilometraggio} km.`;
-                } else if(auto1.chilometraggio < auto2.chilometraggio) {
-                    return `L'auto 2 ha un chilometraggio maggiore di ${auto2.chilometraggio} km.`; 
-                } else {
-                    return "Le due automobili hanno lo stesso chilometraggio.";
-                }
-            }  
+
+            getContatoreChiamate() {
+                return this.#contatoreChiamate;
+            }
         }
+
+        const auto = new Automobile();
+
+        auto.accendiMotore();
+        auto.accendiMotore();
+        auto.accendiMotore();
         
-        const auto1 = new Automobile(120000);
-        const auto2 = new Automobile(95000);
-        console.log(Automobile.confrontaChilometraggio(auto1, auto2));
+
+        console.log("Numero di chiamate al metodo accendiMotore:", auto.getContatoreChiamate());
+
         
         
         
