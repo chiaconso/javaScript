@@ -11,9 +11,14 @@
         
         class Automobile {
             #contatoreChiamate = 0;
+
+            #incrementaContatore() {
+                this.#contatoreChiamate++;
+            }
             
             accendiMotore() {
-                this.#contatoreChiamate++;
+                this.#incrementaContatore();
+                console.log("Motore acceso");
             }
 
             getContatoreChiamate() {
@@ -23,6 +28,7 @@
 
         const auto = new Automobile();
 
+        auto.accendiMotore();
         auto.accendiMotore();
         auto.accendiMotore();
         auto.accendiMotore();
