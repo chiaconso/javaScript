@@ -18,7 +18,6 @@
             
             accendiMotore() {
                 this.#incrementaContatore();
-                console.log("Motore acceso");
             }
 
             getContatoreChiamate() {
@@ -27,13 +26,9 @@
         }
 
         const auto = new Automobile();
-
         auto.accendiMotore();
         auto.accendiMotore();
         auto.accendiMotore();
-        auto.accendiMotore();
-        
-
         console.log("Numero di chiamate al metodo accendiMotore:", auto.getContatoreChiamate());
 
         
