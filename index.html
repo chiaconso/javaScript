@@ -10,52 +10,28 @@
     <script type="text/javascript">
         
         class Automobile {
-            constructor(marca, modello, anno, chilometraggio = 0) {
+            constructor(marca, modello, annoDiFabbricazione) {
                 this.marca = marca
                 this.modello = modello 
-                this.anno = anno 
-                this.chilometraggio = chilometraggio
+                this.annoDiFabbricazione = annoDiFabbricazione
             }
-
-            descrizione() {
-                return `Questa è una ${this.marca} ${this.modello} del ${this.anno}.`;
+            
+            #calcolaEtà() {
+                const annoCorrente = new Date().getFullYear();
+                return annoCorrente - this.annoDiFabbricazione;
             }
-
-            aggiungiChilometri(km) {
-                this.chilometraggio += km;
-            }
-
-            mostraChilometraggio() {
-                return `Il chilometraggio attuale è di ${this.chilometraggio} km.`;
+            
+            mostraEtà() {
+                const età = this.#calcolaEtà();
+                console.log(`L'età dell'automobile ${this.marca} ${this.modello} è di ${età} anni.`);
             }
         }
 
-        Automobile.prototype.saluta = function() {
-            return `Ciao! Sono una ${this.marca} ${this.modello}.`;
-        };
-
-        class Elettrica extends Automobile {
-            constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
-                super(marca, modello, anno, chilometraggio);
-                this.autonomia = autonomia;
-            }
-
-            descrizione() {
-                return `${super.descrizione()} Ha un'autonomia di ${this.autonomia} km.`;
-            }
-
-            ricarica(km) {
-                this.autonomia += km;
-            }
-        }
-
-        const auto = new Automobile("Fiat", "Panda", 2020);
-        const autoElettrica = new Elettrica("Tesla", "Model 3", 2023, 10000, 350);
-        autoElettrica.aggiungiChilometri(200);
-        autoElettrica.ricarica(50);
-        console.log(auto.saluta());
-        console.log(autoElettrica.saluta());
-
+        const auto = new Automobile("Fiat", "Panda", 2015);
+        auto.mostraEtà();
+        
+        
+        
         
         
     </script>
