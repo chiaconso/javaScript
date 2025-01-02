@@ -11,6 +11,7 @@
         class Automobile {
             #contatoreChiamate = 0;
             #contatoreAggiungiChilometri = 0;
+            #chilometraggio = 0;
             
             #incrementaContatore() {
                 this.#contatoreChiamate++;
@@ -18,6 +19,7 @@
             aggiungiChilometri(km) {
                 this.#incrementaContatore();
                 this.#contatoreAggiungiChilometri++;
+                this.#chilometraggio += km;
                 console.log(`Aggiunti ${km} chilometri`);
             }
             getContatoreChiamate() {
@@ -26,14 +28,16 @@
             mostraContatoreChiamate() {
                 return this.#contatoreAggiungiChilometri;
             }
+            get chilometraggio() {
+                return this.#chilometraggio;
+            }
         }
-
+        
         const auto = new Automobile();
-        auto.aggiungiChilometri(70);
-        auto.aggiungiChilometri(100);
-        auto.aggiungiChilometri(80);
-
+        auto.aggiungiChilometri(50);
+        auto.aggiungiChilometri(30);
         console.log(auto.mostraContatoreChiamate());
+        console.log(auto.chilometraggio);
         
         
         
