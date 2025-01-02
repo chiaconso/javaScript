@@ -10,44 +10,30 @@
         
         class Automobile {
             #contatoreChiamate = 0;
-            
-            accendiMotore() {
-                this.#contatoreChiamate++;
-            }
-            getContatoreChiamate() {
-                return this.#contatoreChiamate;
-            }
+            #contatoreAggiungiChilometri = 0;
             
             #incrementaContatore() {
                 this.#contatoreChiamate++;
-                
             }
-            metodoPubblico() {
-                this.#incrementaContatore();
-                console.log('Metodo pubblico chiamato');
-            }
-            
-            getContatoreChiamate() {
-                return this.#contatoreChiamate;
-            } 
-            
             aggiungiChilometri(km) {
                 this.#incrementaContatore();
-                console.log(`Aggiungi ${km} chilometri`);
+                this.#contatoreAggiungiChilometri++;
+                console.log(`Aggiunti ${km} chilometri`);
             }
             getContatoreChiamate() {
                 return this.#contatoreChiamate;
             }
+            mostraContatoreChiamate() {
+                return this.#contatoreAggiungiChilometri;
+            }
         }
-        
+
         const auto = new Automobile();
-        
-        auto.aggiungiChilometri(50);
-        auto.aggiungiChilometri(30);
-        
-        console.log(auto.getContatoreChiamate());
-        
-        
+        auto.aggiungiChilometri(70);
+        auto.aggiungiChilometri(100);
+        auto.aggiungiChilometri(80);
+
+        console.log(auto.mostraContatoreChiamate());
         
         
         
