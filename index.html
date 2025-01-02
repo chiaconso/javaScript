@@ -31,13 +31,25 @@
             get chilometraggio() {
                 return this.#chilometraggio;
             }
+            set chilometraggio(valore) {
+                if(valore >= this.#chilometraggio) {
+                    this.#chilometraggio = valore;
+                    console.log(`Chilometraggio aggiornato a ${valore}`);
+                } else {
+                    console.log("Errore: il chilometraggio non può essere ridotto");
+                }
+            }
         }
         
         const auto = new Automobile();
-        auto.aggiungiChilometri(50);
-        auto.aggiungiChilometri(30);
-        console.log(auto.mostraContatoreChiamate());
-        console.log(auto.chilometraggio);
+       auto.aggiungiChilometri(50);
+       console.log(auto.chilometraggio);
+
+       auto.chilometraggio = 80;
+       console.log(auto.chilometraggio);
+
+       auto.chilometraggio = 40;
+       console.log(auto.chilometraggio);
         
         
         
