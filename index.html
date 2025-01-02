@@ -26,19 +26,27 @@
                 this.#incrementaContatore();
                 console.log('Metodo pubblico chiamato');
             }
-
+            
             getContatoreChiamate() {
                 return this.#contatoreChiamate;
             } 
+            
+            aggiungiChilometri(km) {
+                this.#incrementaContatore();
+                console.log(`Aggiungi ${km} chilometri`);
+            }
+            getContatoreChiamate() {
+                return this.#contatoreChiamate;
+            }
         }
-
-        const auto = new Automobile();
-
-        auto.metodoPubblico();
-        auto.metodoPubblico();
         
-
+        const auto = new Automobile();
+        
+        auto.aggiungiChilometri(50);
+        auto.aggiungiChilometri(30);
+        
         console.log(auto.getContatoreChiamate());
+        
         
         
         
