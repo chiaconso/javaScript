@@ -6,31 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    
     <script type="text/javascript">
         
         class Automobile {
             #contatoreChiamate = 0;
-
-            #incrementaContatore() {
-                this.#contatoreChiamate++;
-            }
             
             accendiMotore() {
+                this.#contatoreChiamate++;
+            }
+            getContatoreChiamate() {
+                return this.#contatoreChiamate;
+            }
+            
+            #incrementaContatore() {
+                this.#contatoreChiamate++;
+                
+            }
+            metodoPubblico() {
                 this.#incrementaContatore();
+                console.log('Metodo pubblico chiamato');
             }
 
             getContatoreChiamate() {
                 return this.#contatoreChiamate;
-            }
+            } 
         }
 
         const auto = new Automobile();
-        auto.accendiMotore();
-        auto.accendiMotore();
-        auto.accendiMotore();
-        console.log("Numero di chiamate al metodo accendiMotore:", auto.getContatoreChiamate());
 
+        auto.metodoPubblico();
+        auto.metodoPubblico();
+        
+
+        console.log(auto.getContatoreChiamate());
+        
+        
+        
+        
+        
+        
+        
         
         
         
