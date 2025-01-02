@@ -44,6 +44,14 @@
                     console.log("Errore: il chilometraggio non può essere ridotto");
                 }
             }
+
+            static verificaIstanza(obj, classe) {
+                if(obj instanceof classe) {
+                    console.log(`${obj.constructor.name} è un'istanza della classe ${classe.name}`);
+                } else {
+                    console.log(`${obj.constructor.name} non è un'istanza della classe ${classe.name}`);
+                }
+            }
         }
         
         class Camion extends Automobile {
@@ -70,11 +78,12 @@
             } 
         }
 
+        const auto = new Automobile();
         const camion = new Camion(5000);
-        camion.carica(2000);
-        camion.carica(3000);
-        camion.carica(1000);
-        console.log(camion.descrizione());
+        Automobile.verificaIstanza(auto, Automobile);
+        Automobile.verificaIstanza(camion, Camion);
+        Automobile.verificaIstanza(camion, Automobile);
+
 
 
         
