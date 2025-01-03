@@ -7,94 +7,37 @@
 </head>
 <body>
     <script type="text/javascript">
-        
-        class Automobile {
-            #contatoreChiamate = 0;
-            #contatoreAggiungiChilometri = 0;
-            #chilometraggio = 0;
-            
-            #incrementaContatore() {
-                this.#contatoreChiamate++;
-            }
 
-            avviaMotore() {
-                this.#incrementaContatore();
-            }
+class Automobile {
+    constructor(marca, modello, anno) {
+        this.marca = marca;
+        this.modello = modello;
+        this.anno = anno;
+        this.chilometraggio = 0;
+    }
 
-            aggiungiChilometri(km) {
-                this.#incrementaContatore();
-                this.#contatoreAggiungiChilometri++;
-                this.#chilometraggio += km;
-                console.log(`Aggiunti ${km} chilometri`);
-            }
-            getContatoreChiamate() {
-                return this.#contatoreChiamate;
-            }
-            mostraContatoreChiamate() {
-                return this.#contatoreAggiungiChilometri;
-            }
-            get chilometraggio() {
-                return this.#chilometraggio;
-            }
-            set chilometraggio(valore) {
-                if(valore >= this.#chilometraggio) {
-                    this.#chilometraggio = valore;
-                    console.log(`Chilometraggio aggiornato a ${valore}`);
-                } else {
-                    console.log("Errore: il chilometraggio non può essere ridotto");
-                }
-            }
+    aggiungiChilometri(km) {
+        this.chilometraggio += km;
+    }
 
-            static verificaIstanza(obj, classe) {
-                if(obj instanceof classe) {
-                    console.log(`${obj.constructor.name} è un'istanza della classe ${classe.name}`);
-                } else {
-                    console.log(`${obj.constructor.name} non è un'istanza della classe ${classe.name}`);
-                }
-            }
-        }
-        
-        class Camion extends Automobile {
-            #caricoMassimo;
-            #caricoAttuale = 0;
-            
-            constructor(caricoMassimo) {
-                super();
-                this.#caricoMassimo = caricoMassimo;
-            }
-            get caricoMassimo() {
-                return this.#caricoMassimo;
-            }
-            carica(kg) {
-                if (this.#caricoAttuale + kg <= this.#caricoMassimo) {
-                    this.#caricoAttuale += kg;
-                    console.log(`Carico di ${kg} kg aggiunto. Carico attuale ${this.#caricoAttuale} kg.`);
-                } else {
-                    console.log(`Errore: il carico supera il limite massimo di ${this.#caricoMassimo} kg.`);
-                }
-            }
-            descrizione() {
-                return ` Carico massimo: ${this.#caricoMassimo} kg. Carico attuale: ${this.#caricoAttuale} kg.`;
-            } 
-        }
+    mostraChilometraggio() {
+        return this.chilometraggio;
+    }
+}
 
-        const auto = new Automobile();
-        const camion = new Camion(5000);
-        Automobile.verificaIstanza(auto, Automobile);
-        Automobile.verificaIstanza(camion, Camion);
-        Automobile.verificaIstanza(camion, Automobile);
+const auto = new Automobile("Fiat", "Panda", 2020);
+auto.aggiungiChilometri(100);
+console.log(auto.mostraChilometraggio());
+auto.aggiungiChilometri(50);
+console.log(auto.mostraChilometraggio());
 
 
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
     </script>
+    
 </body>
 </html>
