@@ -12,18 +12,13 @@
             nome: "Luca",
             cognome: "Rossi",
             eta: 30,
-            professione: "Ingegnere",
-            citta: "Roma"
+            professione: "Ingegnere"
         };
         
+        // Utilizzo di JSON.stringify() per convertire l'oggetto in una stringa JSON
+        const personaJSON = JSON.stringify(persona);
         
-        const { nome, cognome, ...resto } = persona;
-        
-        
-        console.log("Nome:", nome);         
-        console.log("Cognome:", cognome);   
-        console.log("Resto delle proprietà:", resto);
-        
+        console.log(personaJSON);
         
         
         
