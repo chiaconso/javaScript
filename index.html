@@ -8,17 +8,21 @@
 <body>
     <script>
         
+        const persona = {
+            nome: "Luca",
+            cognome: "Rossi",
+            eta: 30,
+            professione: "Ingegnere",
+            citta: "Roma"
+        };
         
         
-        const numeri = [10, 20, 30, 40, 50];
+        const { nome, cognome, ...resto } = persona;
         
         
-        const [primo, secondo, ...resto] = numeri;
-        
-        
-        console.log("Primo numero:", primo);    
-        console.log("Secondo numero:", secondo); 
-        console.log("Resto degli elementi:", resto); 
+        console.log("Nome:", nome);         
+        console.log("Cognome:", cognome);   
+        console.log("Resto delle proprietà:", resto);
         
         
         
