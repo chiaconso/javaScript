@@ -9,18 +9,18 @@
     <script>
         
         const persona = {
-            nome: "Chiara",
-            cognome: "Consortini",
-            eta: 27,
-            professione: "Naturalista"
+            nome: "Luca",
+            eta: 30
         };
         
-        // Utilizzo del destructuring per estrarre proprietà e assegnarle a variabili con nomi diversi
-        const { nome: nomeUtente, eta: etaUtente } = persona;
+        
+        const { nome, cognome = "Non specificato", eta, professione = "Non specificata" } = persona;
         
         
-        console.log("Nome utente:", nomeUtente); 
-        console.log("Età utente:", etaUtente); 
+        console.log("Nome:", nome);             
+        console.log("Cognome:", cognome);       
+        console.log("Età:", eta);              
+        console.log("Professione:", professione);
         
         
         
