@@ -8,17 +8,14 @@
 <body>
     <script>
         
-        const numeri = [1, 2, 3, 4, 5];
-        
-        // Creazione di una copia dell'array utilizzando lo spread operator
-        const copiaNumeri = [...numeri];
-        
-        // Modifica dell'array originale
-        numeri.push(6);
+        const numeri1 = [1, 2, 3];
+        const numeri2 = [4, 5, 6];
         
         
-        console.log("Array originale:", numeri);     
-        console.log("Copia dell'array:", copiaNumeri);
+        const arrayUnito = [...numeri1, ...numeri2];
+        
+        
+        console.log("Array unito:", arrayUnito);
         
         
         
