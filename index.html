@@ -8,19 +8,17 @@
 <body>
     <script>
         
-        const persona = {
-            nome: "Luca",
-            eta: 30
-        };
+        const numeri = [1, 2, 3, 4, 5];
+        
+        // Creazione di una copia dell'array utilizzando lo spread operator
+        const copiaNumeri = [...numeri];
+        
+        // Modifica dell'array originale
+        numeri.push(6);
         
         
-        const { nome, cognome = "Non specificato", eta, professione = "Non specificata" } = persona;
-        
-        
-        console.log("Nome:", nome);             
-        console.log("Cognome:", cognome);       
-        console.log("Età:", eta);              
-        console.log("Professione:", professione);
+        console.log("Array originale:", numeri);     
+        console.log("Copia dell'array:", copiaNumeri);
         
         
         
