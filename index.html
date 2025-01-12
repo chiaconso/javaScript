@@ -7,18 +7,23 @@
 </head>
 <body>
     <script>
-
-
-        const numeri = [10, 20, 30, 40, 50];
-        const [primo, , terzo] = numeri;
-
-        console.log("Primo numero:", primo);
-        console.log("Terzo numero:", terzo);
         
-
-
-
-
+        const numeri = [10, 20, 30];
+        
+        
+        const [primo = 0, secondo = 0, terzo = 0, quarto = 0, quinto = 0] = numeri;
+        
+        
+        console.log("Primo numero:", primo);  
+        console.log("Secondo numero:", secondo);  
+        console.log("Terzo numero:", terzo);  
+        console.log("Quarto numero:", quarto);  
+        console.log("Quinto numero:", quinto);  
+        
+        
+        
+        
+        
     </script>
 </body>
 </html>
