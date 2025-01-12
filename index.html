@@ -8,22 +8,14 @@
 <body>
     <script>
         
-        const persona = {
-            nome: "Luca",
-            cognome: "Rossi",
-            eta: 30,
-            professione: "Ingegnere"
-        };
+        const personaJSON = '{"nome":"Luca","cognome":"Rossi","eta":30,"professione":"Ingegnere"}';
         
-        // Utilizzo di JSON.stringify() per convertire l'oggetto in una stringa JSON
-        const personaJSON = JSON.stringify(persona);
+        // Utilizzo di JSON.parse() per convertire la stringa JSON in un oggetto JavaScript
+        const persona = JSON.parse(personaJSON);
         
-        console.log(personaJSON);
+        console.log(persona);
         
-        
-        
-        
-        
+    
         
     </script>
 </body>
