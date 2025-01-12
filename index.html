@@ -6,38 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <script type="text/javascript">
-
-class Automobile {
-    constructor(marca, modello, anno) {
-        this.marca = marca;
-        this.modello = modello;
-        this.anno = anno;
-        this.chilometraggio = 0;
-    }
-
-    aggiungiChilometri(km) {
-        this.chilometraggio += km;
-    }
-
-    mostraChilometraggio() {
-        return this.chilometraggio;
-    }
-}
-
-const auto = new Automobile("Fiat", "Panda", 2020);
-auto.aggiungiChilometri(100);
-console.log(auto.mostraChilometraggio());
-auto.aggiungiChilometri(50);
-console.log(auto.mostraChilometraggio());
+    <script>
 
 
+        const numeri = [10, 20, 30, 40, 50];
+        const [primo, secondo] = numeri;
 
+        console.log("Primo numero:", primo);
+        console.log("Secondo numero:", secondo);
+        
 
 
 
 
     </script>
-    
 </body>
 </html>
