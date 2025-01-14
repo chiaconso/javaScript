@@ -8,12 +8,17 @@
 <body>
     <script>
         
-        
         function stampaMessaggio() {
-            console.log("Messaggio stampato ogni 2 secondi!");
+            console.log("Messaggio stampato ogni secondo!");
         }
         
-        setInterval(stampaMessaggio, 2000);
+        const intervallo = setInterval(stampaMessaggio, 1000);
+        
+        setTimeout(() => {
+            clearInterval(intervallo);
+            console.log("Intervallo interrotto dopo 5 secondi!");
+        }, 5000);
+        
         
         
         
