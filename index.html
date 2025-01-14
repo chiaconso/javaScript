@@ -8,27 +8,24 @@
 <body>
     <script>
         
-
-        function manipolaStringa(input) {
+    
+        function eseguiOperazione(input) {
             try {
-                if (typeof input !== "string") {
-                    throw new TypeError("L'input deve essere una stringa.");
+                if (typeof input !== "number") {
+                    throw new Error("L'input deve essere un numero.");
                 }
-                
-                const risultato = input.toUpperCase();
+                const risultato = input ** 2;
                 console.log(`Risultato: ${risultato}`);
             } catch (errore) {
-                if (errore instanceof TypeError) {
-                    console.error(`Errore di tipo: ${errore.message}`);
-                } else {
-                    console.error(`Errore generico: ${errore.message}`);
-                }
+                console.error(`Errore: ${errore.message}`);
+            } finally {
+                console.log("Operazione completata.");
             }
         }
         
-        manipolaStringa("ciao"); 
-        manipolaStringa(123);    
-        manipolaStringa(null);   
+        eseguiOperazione(5);   
+        eseguiOperazione("ciao"); 
+        
         
         
         
