@@ -8,16 +8,21 @@
 <body>
     <script>
         
-        function stampaMessaggio() {
-            console.log("Messaggio stampato ogni secondo!");
+        
+        function dividiNumeri(dividendo, divisore) {
+            try {
+                if (divisore === 0) {
+                    throw new Error("Divisione per zero non consentita.");
+                }
+                const risultato = dividendo / divisore;
+                console.log(`Risultato: ${risultato}`);
+            } catch (errore) {
+                console.error(`Errore: ${errore.message}`);
+            }
         }
         
-        const intervallo = setInterval(stampaMessaggio, 1000);
-        
-        setTimeout(() => {
-            clearInterval(intervallo);
-            console.log("Intervallo interrotto dopo 5 secondi!");
-        }, 5000);
+        dividiNumeri(10, 2); 
+        dividiNumeri(10, 0); 
         
         
         
