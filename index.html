@@ -8,24 +8,16 @@
 <body>
     <script>
         
+        const stato = "errore"; 
         
-       const numero = 3;
-
-       const nome = "Chiara";
-
-       const listaNumeri = [1, 5, 7, 9];
-
-       const persona = {
-        nome: "Eva",
-        cognome: "Rossi",
-        eta: 25,
-        professione: "Modella"
-       }
+        if (stato === "errore") {
+            console.error("Si è verificato un errore critico. Controllare immediatamente!");
+        } else if (stato === "avviso") {
+            console.warn("Attenzione: si è verificato un problema minore.");
+        } else {
+            console.log("Lo stato è normale. Nessun problema rilevato.");
+        }
         
-       console.log(numero);
-       console.log(nome);
-       console.log(listaNumeri);
-       console.log(persona); 
         
         
     </script>
