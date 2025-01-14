@@ -8,15 +8,21 @@
 <body>
     <script>
         
-        const stato = "errore"; 
         
-        if (stato === "errore") {
-            console.error("Si è verificato un errore critico. Controllare immediatamente!");
-        } else if (stato === "avviso") {
-            console.warn("Attenzione: si è verificato un problema minore.");
-        } else {
-            console.log("Lo stato è normale. Nessun problema rilevato.");
-        }
+        const utenti = [
+        { nome: "Mario", cognome: "Rossi", eta: 30 },
+        { nome: "Luigi", cognome: "Verdi", eta: 25 },
+        { nome: "Anna", cognome: "Bianchi", eta: 35 }
+        ];
+        
+        console.table(utenti);
+        
+        console.group("Messaggi di debug");
+        console.log("Questo è un messaggio di log.");
+        console.warn("Questo è un avviso.");
+        console.error("Questo è un messaggio di errore.");
+        console.groupEnd();
+        
         
         
         
