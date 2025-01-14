@@ -8,17 +8,22 @@
 <body>
     <script>
         
-        // Dichiarazione delle variabili
-        const nome = "Mario";
-        const cognome = "Rossi";
-        const eta = 27;
-        const citta = "Roma";
         
-        // Creazione della stringa utilizzando i template literals
-        const nomeCompleto = `${nome} ${cognome} ${eta} ${citta}`;
+        function formatPerson(person) {
+            return `Nome: ${person.nome}, Cognome: ${person.cognome}, Età: ${person.eta}, Città: ${person.citta}`;
+        }
         
+        const personaEsempio = {
+            nome: "Mario",
+            cognome: "Rossi",
+            eta: 30,
+            citta: "Roma"
+        };
         
-        console.log(nomeCompleto);
+        const risultato = formatPerson(personaEsempio);
+        
+        console.log(risultato);
+        
         
         
         
