@@ -8,21 +8,28 @@
 <body>
     <script>
         
-        
-        function dividiNumeri(dividendo, divisore) {
+
+        function manipolaStringa(input) {
             try {
-                if (divisore === 0) {
-                    throw new Error("Divisione per zero non consentita.");
+                if (typeof input !== "string") {
+                    throw new TypeError("L'input deve essere una stringa.");
                 }
-                const risultato = dividendo / divisore;
+                
+                const risultato = input.toUpperCase();
                 console.log(`Risultato: ${risultato}`);
             } catch (errore) {
-                console.error(`Errore: ${errore.message}`);
+                if (errore instanceof TypeError) {
+                    console.error(`Errore di tipo: ${errore.message}`);
+                } else {
+                    console.error(`Errore generico: ${errore.message}`);
+                }
             }
         }
         
-        dividiNumeri(10, 2); 
-        dividiNumeri(10, 0); 
+        manipolaStringa("ciao"); 
+        manipolaStringa(123);    
+        manipolaStringa(null);   
+        
         
         
         
