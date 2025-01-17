@@ -9,24 +9,14 @@
     <script>
         
     
-        function eseguiOperazione(input) {
-            try {
-                if (typeof input !== "number") {
-                    throw new Error("L'input deve essere un numero.");
-                }
-                const risultato = input ** 2;
-                console.log(`Risultato: ${risultato}`);
-            } catch (errore) {
-                console.error(`Errore: ${errore.message}`);
-            } finally {
-                console.log("Operazione completata.");
-            }
+        function funzionePrincipale(valore1, valore2, callback) {
+            console.log(valore1 + valore2)
+            callback()
         }
-        
-        eseguiOperazione(5);   
-        eseguiOperazione("ciao"); 
-        
-        
+
+        funzionePrincipale(2, 3, function() {
+            console.log("Questa è la callback");
+        })
         
         
         
