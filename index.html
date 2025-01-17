@@ -9,14 +9,14 @@
     <script>
         
     
-        function funzionePrincipale(valore1, valore2, callback) {
-            console.log(valore1 + valore2)
-            callback()
+        function funzionePrincipale(callback) {
+            const result = 5 + 3;
+            callback(result);
         }
-
-        funzionePrincipale(2, 3, function() {
-            console.log("Questa è la callback");
+        funzionePrincipale(function(result) {
+            console.log(result)
         })
+         
         
         
         
