@@ -9,18 +9,37 @@
     <script>
         
         
-        function promessaConMessaggio() {
-            return new Promise((resolve) => {
+        
+        function promessaConMessaggio(includiErrore) {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resolve("Promessa risolta dopo 2 secondi!");
+                    if (includiErrore) {
+                        reject("Errore: qualcosa è andato storto!");
+                    } else {
+                        resolve("Promessa risolta dopo 2 secondi!");
+                    }
                 }, 2000);
             });
         }
         
         
-        promessaConMessaggio().then((messaggio) => {
+        promessaConMessaggio(false)
+        .then((messaggio) => {
             console.log(messaggio);
+        })
+        .catch((errore) => {
+            console.error(errore);
         });
+        
+        
+        promessaConMessaggio(true)
+        .then((messaggio) => {
+            console.log(messaggio);
+        })
+        .catch((errore) => {
+            console.error(errore);
+        });
+        
         
         
         
