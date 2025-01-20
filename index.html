@@ -9,36 +9,42 @@
     <script>
         
         
-        
-        function promessaConMessaggio(includiErrore) {
+        function promessaConFinally(includiErrore) {
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     if (includiErrore) {
                         reject("Errore: qualcosa è andato storto!");
                     } else {
-                        resolve("Promessa risolta dopo 2 secondi!");
+                        resolve("Promessa risolta con successo!");
                     }
                 }, 2000);
             });
         }
         
         
-        promessaConMessaggio(false)
+        promessaConFinally(false)
         .then((messaggio) => {
             console.log(messaggio);
         })
         .catch((errore) => {
             console.error(errore);
+        })
+        .finally(() => {
+            console.log("Azione eseguita indipendentemente dal risultato della promessa.");
         });
         
-        
-        promessaConMessaggio(true)
+    
+        promessaConFinally(true)
         .then((messaggio) => {
             console.log(messaggio);
         })
         .catch((errore) => {
             console.error(errore);
+        })
+        .finally(() => {
+            console.log("Azione eseguita indipendentemente dal risultato della promessa.");
         });
+        
         
         
         
