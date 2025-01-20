@@ -9,33 +9,19 @@
     <script>
         
         
-        
-        function primaOperazione(callback) {
-            console.log("Esecuzione della prima operazione...");
-            const risultato = 10 + 5; 
-            console.log(`Risultato della prima operazione: ${risultato}`);
-            callback(risultato);
-        }
-        
-        
-        function secondaOperazione(risultatoPrecedente, callback) {
-            console.log("Esecuzione della seconda operazione...");
-            const risultato = risultatoPrecedente * 2; 
-            console.log(`Risultato della seconda operazione: ${risultato}`);
-            callback(risultato);
-        }
-        
-        
-        function esecuzioneCompleta() {
-            primaOperazione((risultato) => {
-                secondaOperazione(risultato, (risultatoFinale) => {
-                    console.log(`Operazioni completate con risultato finale: ${risultatoFinale}`);
-                });
+        function promessaConMessaggio() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Promessa risolta dopo 2 secondi!");
+                }, 2000);
             });
         }
         
         
-        esecuzioneCompleta();
+        promessaConMessaggio().then((messaggio) => {
+            console.log(messaggio);
+        });
+        
         
         
         
