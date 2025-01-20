@@ -8,15 +8,35 @@
 <body>
     <script>
         
-    
-        function funzionePrincipale(callback) {
-            const result = 5 + 3;
-            callback(result);
+        
+        
+        function primaOperazione(callback) {
+            console.log("Esecuzione della prima operazione...");
+            const risultato = 10 + 5; 
+            console.log(`Risultato della prima operazione: ${risultato}`);
+            callback(risultato);
         }
-        funzionePrincipale(function(result) {
-            console.log(result)
-        })
-         
+        
+        
+        function secondaOperazione(risultatoPrecedente, callback) {
+            console.log("Esecuzione della seconda operazione...");
+            const risultato = risultatoPrecedente * 2; 
+            console.log(`Risultato della seconda operazione: ${risultato}`);
+            callback(risultato);
+        }
+        
+        
+        function esecuzioneCompleta() {
+            primaOperazione((risultato) => {
+                secondaOperazione(risultato, (risultatoFinale) => {
+                    console.log(`Operazioni completate con risultato finale: ${risultatoFinale}`);
+                });
+            });
+        }
+        
+        
+        esecuzioneCompleta();
+        
         
         
         
