@@ -8,49 +8,30 @@
 <body>
     <script>
         
-        
-        function promessaConFinally(includiErrore) {
-            return new Promise((resolve, reject) => {
+        function promessaConNumero() {
+            return new Promise((resolve) => {
                 setTimeout(() => {
-                    if (includiErrore) {
-                        reject("Errore: qualcosa è andato storto!");
-                    } else {
-                        resolve("Promessa risolta con successo!");
-                    }
-                }, 2000);
+                    resolve(5); 
+                }, 1000);
             });
         }
         
         
-        promessaConFinally(false)
-        .then((messaggio) => {
-            console.log(messaggio);
+        promessaConNumero()
+        .then((numero) => {
+            console.log(`Numero iniziale: ${numero}`);
+            return numero * 2; 
+        })
+        .then((numeroMoltiplicato) => {
+            console.log(`Dopo moltiplicazione: ${numeroMoltiplicato}`);
+            return numeroMoltiplicato + 3;
+        })
+        .then((risultatoFinale) => {
+            console.log(`Risultato finale: ${risultatoFinale}`); 
         })
         .catch((errore) => {
-            console.error(errore);
-        })
-        .finally(() => {
-            console.log("Azione eseguita indipendentemente dal risultato della promessa.");
+            console.error(`Errore: ${errore}`);
         });
-        
-    
-        promessaConFinally(true)
-        .then((messaggio) => {
-            console.log(messaggio);
-        })
-        .catch((errore) => {
-            console.error(errore);
-        })
-        .finally(() => {
-            console.log("Azione eseguita indipendentemente dal risultato della promessa.");
-        });
-        
-        
-        
-        
-        
-        
-        
         
         
         
