@@ -8,31 +8,36 @@
 <body>
     <script>
         
-        function booleanPromise(shouldResolve) {
-            return new Promise((resolve, reject) => {
+        async function firstAsyncFunction() {
+            return new Promise((resolve) => {
                 setTimeout(() => {
-                    if (shouldResolve) {
-                        resolve("La promessa è stata risolta con successo!");
-                    } else {
-                        reject("Errore: la promessa è stata rifiutata.");
-                    }
-                }, 2000); 
+                    resolve("Risultato della prima funzione (risolta dopo 2 secondi)");
+                }, 2000);
             });
         }
         
-        async function asyncFunction(shouldResolve) {
-            try {
-                console.log("Attesa della promessa...");
-                const result = await booleanPromise(shouldResolve); 
-                console.log(result); 
-            } catch (error) {
-                console.error(`Errore catturato: ${error}`); 
-            }
+        async function secondAsyncFunction() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Risultato della seconda funzione (risolta dopo 1 secondo)");
+                }, 1000); 
+            });
         }
         
+        async function callFunctionsInSeries() {
+            console.log("Chiamata della prima funzione...");
+            const firstResult = await firstAsyncFunction(); 
+            console.log(firstResult);
+            
+            console.log("Chiamata della seconda funzione...");
+            const secondResult = await secondAsyncFunction();
+            console.log(secondResult);
+            
+            console.log("Entrambe le funzioni sono state completate.");
+        }
         
-        asyncFunction(true);  
-        asyncFunction(false); 
+        callFunctionsInSeries();
+        
         
         
         
