@@ -24,14 +24,29 @@
             });
         }
         
+        function thirdPromise() {
+            return new Promise((_, reject) => {
+                setTimeout(() => {
+                    reject("Terza promessa rifiutata dopo 1.5 secondi");
+                }, 1500); 
+            });
+        }
         
-        Promise.race([firstPromise(), secondPromise()])
-        .then((result) => {
-            console.log(`La prima promessa risolta è: ${result}`);
-        })
-        .catch((error) => {
-            console.error(`Errore catturato: ${error}`);
+        
+        Promise.allSettled([firstPromise(), secondPromise(), thirdPromise()])
+        .then((results) => {
+            console.log("Risultati di tutte le promesse:");
+            results.forEach((result, index) => {
+                if (result.status === "fulfilled") {
+                    console.log(`Promessa ${index + 1} risolta: ${result.value}`);
+                } else {
+                    console.log(`Promessa ${index + 1} rifiutata: ${result.reason}`);
+                }
+            });
         });
+        
+        
+        
         
         
         
