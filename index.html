@@ -8,39 +8,23 @@
 <body>
     <script>
         
-        async function firstAsyncFunction() {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve("Risultato della prima funzione (risolta dopo 2 secondi)");
-                }, 2000);
-            });
-        }
-        
-        async function secondAsyncFunction() {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve("Risultato della seconda funzione (risolta dopo 1 secondo)");
-                }, 1000); 
-            });
-        }
-        
-        async function callFunctionsInSeries() {
-            console.log("Chiamata della prima funzione...");
-            const firstResult = await firstAsyncFunction(); 
-            console.log(firstResult);
+        async function fetchData() {
+            const apiUrl = "https://jsonplaceholder.typicode.com/posts"; 
             
-            console.log("Chiamata della seconda funzione...");
-            const secondResult = await secondAsyncFunction();
-            console.log(secondResult);
-            
-            console.log("Entrambe le funzioni sono state completate.");
+            try {
+                console.log("Invio della richiesta...");
+                const response = await fetch(apiUrl); 
+                if (!response.ok) {
+                    throw new Error(`Errore HTTP: ${response.status}`); 
+                }
+                const data = await response.json(); 
+                console.log("Dati ricevuti:", data);
+            } catch (error) {
+                console.error("Errore durante il recupero dei dati:", error.message);
+            }
         }
         
-        callFunctionsInSeries();
-        
-        
-        
-        
+        fetchData();
         
         
         
