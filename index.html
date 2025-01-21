@@ -8,21 +8,32 @@
 <body>
     <script>
         
-        function delayedPromise() {
-            return new Promise((resolve) => {
+        function booleanPromise(shouldResolve) {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resolve("La promessa è stata risolta dopo 2 secondi");
+                    if (shouldResolve) {
+                        resolve("La promessa è stata risolta con successo!");
+                    } else {
+                        reject("Errore: la promessa è stata rifiutata.");
+                    }
                 }, 2000); 
             });
         }
         
-        async function asyncFunction() {
-            console.log("Attesa della promessa...");
-            const message = await delayedPromise(); 
-            console.log(message); 
+        async function asyncFunction(shouldResolve) {
+            try {
+                console.log("Attesa della promessa...");
+                const result = await booleanPromise(shouldResolve); 
+                console.log(result); 
+            } catch (error) {
+                console.error(`Errore catturato: ${error}`); 
+            }
         }
         
-        asyncFunction();
+        
+        asyncFunction(true);  
+        asyncFunction(false); 
+        
         
         
         
