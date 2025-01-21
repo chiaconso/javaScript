@@ -8,25 +8,36 @@
 <body>
     <script>
         
-        async function fetchData() {
+        async function postData() {
             const apiUrl = "https://jsonplaceholder.typicode.com/posts"; 
+            const dataToSend = {
+                title: "Esempio di titolo",
+                body: "Questo è il corpo del messaggio",
+                userId: 1,
+            };
             
             try {
-                console.log("Invio della richiesta...");
-                const response = await fetch(apiUrl); 
+                console.log("Invio della richiesta POST...");
+                const response = await fetch(apiUrl, {
+                    method: "POST", 
+                    headers: {
+                        "Content-Type": "application/json", 
+                    },
+                    body: JSON.stringify(dataToSend), 
+                });
+                
                 if (!response.ok) {
                     throw new Error(`Errore HTTP: ${response.status}`); 
                 }
-                const data = await response.json(); 
-                console.log("Dati ricevuti:", data);
+                
+                const responseData = await response.json(); 
+                console.log("Dati ricevuti:", responseData); 
             } catch (error) {
-                console.error("Errore durante il recupero dei dati:", error.message);
+                console.error("Errore durante l'invio dei dati:", error.message);
             }
         }
         
-        fetchData();
-        
-        
+        postData();
         
         
     </script>
