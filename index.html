@@ -8,42 +8,22 @@
 <body>
     <script>
         
-        function firstPromise() {
+        function delayedPromise() {
             return new Promise((resolve) => {
                 setTimeout(() => {
-                    resolve("Prima promessa risolta dopo 2 secondi");
-                }, 2000);
+                    resolve("La promessa è stata risolta dopo 2 secondi");
+                }, 2000); 
             });
         }
         
-        function secondPromise() {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve("Seconda promessa risolta dopo 1 secondo");
-                }, 1000); 
-            });
+        async function asyncFunction() {
+            console.log("Attesa della promessa...");
+            const message = await delayedPromise(); 
+            console.log(message); 
         }
         
-        function thirdPromise() {
-            return new Promise((_, reject) => {
-                setTimeout(() => {
-                    reject("Terza promessa rifiutata dopo 1.5 secondi");
-                }, 1500); 
-            });
-        }
+        asyncFunction();
         
-        
-        Promise.allSettled([firstPromise(), secondPromise(), thirdPromise()])
-        .then((results) => {
-            console.log("Risultati di tutte le promesse:");
-            results.forEach((result, index) => {
-                if (result.status === "fulfilled") {
-                    console.log(`Promessa ${index + 1} risolta: ${result.value}`);
-                } else {
-                    console.log(`Promessa ${index + 1} rifiutata: ${result.reason}`);
-                }
-            });
-        });
         
         
         
