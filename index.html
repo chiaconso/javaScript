@@ -8,33 +8,26 @@
 <body>
     <script>
         
-        async function fetchWithProxy() {
-            const apiUrl = "https://example.com/api"; 
-            const proxyUrl = "https://cors-anywhere.herokuapp.com/"; 
+        async function fetchPublicAPI() {
+            const apiUrl = "https://jsonplaceholder.typicode.com/posts"; 
             
             try {
-                console.log("Tentativo di inviare una richiesta GET tramite proxy...");
-                const response = await fetch(proxyUrl + apiUrl, {
-                    method: "GET",
-                    headers: {
-                        "X-Requested-With": "XMLHttpRequest", 
-                    },
-                });
+                console.log("Invio della richiesta GET...");
+                const response = await fetch(apiUrl); 
                 
                 if (!response.ok) {
                     throw new Error(`Errore HTTP: ${response.status}`);
                 }
                 
                 const data = await response.json(); 
-                console.log("Dati ricevuti:", data);
+                console.log("Dati ricevuti:", data); 
             } catch (error) {
                 console.error("Errore durante la richiesta:", error.message);
             }
         }
         
         
-        fetchWithProxy();
-        
+        fetchPublicAPI();
         
         
         
