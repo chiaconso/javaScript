@@ -6,32 +6,58 @@
     <title>Document</title>
 </head>
 <body>
+    
     <script>
         
-        async function fetchPublicAPI() {
-            const apiUrl = "https://jsonplaceholder.typicode.com/posts"; 
-            
-            try {
-                console.log("Invio della richiesta GET...");
-                const response = await fetch(apiUrl); 
-                
-                if (!response.ok) {
-                    throw new Error(`Errore HTTP: ${response.status}`);
-                }
-                
-                const data = await response.json(); 
-                console.log("Dati ricevuti:", data); 
-            } catch (error) {
-                console.error("Errore durante la richiesta:", error.message);
-            }
+        // Funzione per salvare un cookie
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Scadenza in giorni
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+            console.log(`Cookie salvato: ${name}=${value}; ${expires}`);
         }
         
+        // Funzione per recuperare un cookie
+        function getCookie(name) {
+            const nameEQ = `${name}=`;
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                cookie = cookie.trim(); // Rimuove eventuali spazi
+                if (cookie.indexOf(nameEQ) === 0) {
+                    const value = cookie.substring(nameEQ.length, cookie.length);
+                    console.log(`Cookie recuperato: ${name}=${value}`);
+                    return value;
+                }
+            }
+            console.log(`Cookie non trovato: ${name}`);
+            return null;
+        }
         
-        fetchPublicAPI();
+        // Funzione per rimuovere un cookie
+        function deleteCookie(name) {
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+            console.log(`Cookie rimosso: ${name}`);
+        }
+        
+        // Esempio d'uso
+        setCookie("testCookie", "testValue", 7); // Salva il cookie con una durata di 7 giorni
+        getCookie("testCookie"); // Recupera il cookie
+        deleteCookie("testCookie"); // Rimuove il cookie
+        getCookie("testCookie"); // Prova a recuperare il cookie dopo la rimozione
+        
+        
+        
         
         
         
         
     </script>
+    
+    
+    
+    
+    
+    
 </body>
 </html>
