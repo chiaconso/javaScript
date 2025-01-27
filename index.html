@@ -7,12 +7,14 @@
 </head>
 <body>
     
-<div id="myDiv">Ciao sono un elemento!</div>
+<p id="content">
+    Ciao a tutti!
+</p>
 
 <script>
 
-const myDiv = document.querySelector('#myDiv');
-myDiv.textContent = "Testo cambiato!"; 
+ const elementP = document.getElementById('content');
+ elementP.innerText = "Hello world!"
 
 
 </script>
