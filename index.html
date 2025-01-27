@@ -7,19 +7,15 @@
 </head>
 <body>
     
-
-
-<p id="content">
-    Paragrafo di testo
-</p>
+<div id="myDiv">Ciao sono un elemento!</div>
 
 <script>
-    
-const elementP = document.getElementById('content');
-console.log(elementP);
+
+const myDiv = document.querySelector('#myDiv');
+myDiv.textContent = "Testo cambiato!"; 
+
 
 </script>
-
 
 </body>
 </html>
