@@ -9,37 +9,34 @@
     
     <script>
         
-        // Funzione per salvare un valore nel localStorage
-        function setLocalStorage(key, value) {
-            localStorage.setItem(key, value);
-            console.log(`Valore salvato nel localStorage: ${key}=${value}`);
+        // Funzione per salvare un valore nel sessionStorage
+        function setSessionStorage(key, value) {
+            sessionStorage.setItem(key, value);
+            console.log(`Valore salvato nel sessionStorage: ${key}=${value}`);
         }
         
-        // Funzione per recuperare un valore dal localStorage
-        function getLocalStorage(key) {
-            const value = localStorage.getItem(key);
+        // Funzione per recuperare un valore dal sessionStorage
+        function getSessionStorage(key) {
+            const value = sessionStorage.getItem(key);
             if (value !== null) {
-                console.log(`Valore recuperato dal localStorage: ${key}=${value}`);
+                console.log(`Valore recuperato dal sessionStorage: ${key}=${value}`);
                 return value;
             }
-            console.log(`Valore non trovato nel localStorage: ${key}`);
+            console.log(`Valore non trovato nel sessionStorage: ${key}`);
             return null;
         }
         
-        // Funzione per rimuovere un valore dal localStorage
-        function removeLocalStorage(key) {
-            localStorage.removeItem(key);
-            console.log(`Valore rimosso dal localStorage: ${key}`);
+        // Funzione per rimuovere un valore dal sessionStorage
+        function removeSessionStorage(key) {
+            sessionStorage.removeItem(key);
+            console.log(`Valore rimosso dal sessionStorage: ${key}`);
         }
         
         // Esempio d'uso
-        setLocalStorage("testKey", "testValue"); // Salva un valore nel localStorage
-        getLocalStorage("testKey"); // Recupera il valore dal localStorage
-        removeLocalStorage("testKey"); // Rimuove il valore dal localStorage
-        getLocalStorage("testKey"); // Prova a recuperare il valore dopo la rimozione
-        
-        
-        
+        setSessionStorage("testKey", "testValue"); // Salva un valore nel sessionStorage
+        getSessionStorage("testKey"); // Recupera il valore dal sessionStorage
+        removeSessionStorage("testKey"); // Rimuove il valore dal sessionStorage
+        getSessionStorage("testKey"); // Prova a recuperare il valore dopo la rimozione
         
         
         
