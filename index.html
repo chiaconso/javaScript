@@ -9,43 +9,34 @@
     
     <script>
         
-        // Funzione per salvare un cookie
-        function setCookie(name, value, days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Scadenza in giorni
-            const expires = "expires=" + date.toUTCString();
-            document.cookie = `${name}=${value}; ${expires}; path=/`;
-            console.log(`Cookie salvato: ${name}=${value}; ${expires}`);
+        // Funzione per salvare un valore nel localStorage
+        function setLocalStorage(key, value) {
+            localStorage.setItem(key, value);
+            console.log(`Valore salvato nel localStorage: ${key}=${value}`);
         }
         
-        // Funzione per recuperare un cookie
-        function getCookie(name) {
-            const nameEQ = `${name}=`;
-            const cookies = document.cookie.split(';');
-            for (let cookie of cookies) {
-                cookie = cookie.trim(); // Rimuove eventuali spazi
-                if (cookie.indexOf(nameEQ) === 0) {
-                    const value = cookie.substring(nameEQ.length, cookie.length);
-                    console.log(`Cookie recuperato: ${name}=${value}`);
-                    return value;
-                }
+        // Funzione per recuperare un valore dal localStorage
+        function getLocalStorage(key) {
+            const value = localStorage.getItem(key);
+            if (value !== null) {
+                console.log(`Valore recuperato dal localStorage: ${key}=${value}`);
+                return value;
             }
-            console.log(`Cookie non trovato: ${name}`);
+            console.log(`Valore non trovato nel localStorage: ${key}`);
             return null;
         }
         
-        // Funzione per rimuovere un cookie
-        function deleteCookie(name) {
-            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
-            console.log(`Cookie rimosso: ${name}`);
+        // Funzione per rimuovere un valore dal localStorage
+        function removeLocalStorage(key) {
+            localStorage.removeItem(key);
+            console.log(`Valore rimosso dal localStorage: ${key}`);
         }
         
         // Esempio d'uso
-        setCookie("testCookie", "testValue", 7); // Salva il cookie con una durata di 7 giorni
-        getCookie("testCookie"); // Recupera il cookie
-        deleteCookie("testCookie"); // Rimuove il cookie
-        getCookie("testCookie"); // Prova a recuperare il cookie dopo la rimozione
-        
+        setLocalStorage("testKey", "testValue"); // Salva un valore nel localStorage
+        getLocalStorage("testKey"); // Recupera il valore dal localStorage
+        removeLocalStorage("testKey"); // Rimuove il valore dal localStorage
+        getLocalStorage("testKey"); // Prova a recuperare il valore dopo la rimozione
         
         
         
