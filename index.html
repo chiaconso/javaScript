@@ -4,30 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function validateForm(event) {
-            event.preventDefault(); // Blocca l'invio del form temporaneamente
-            
-            const nome = document.getElementById('nome').value.trim();
-            const cognome = document.getElementById('cognome').value.trim();
-
-            if (!nome || !cognome) {
-                alert('Per favore, compila tutti i campi richiesti.');
-            } else {
-                document.getElementById('myForm').submit(); // Esegue il submit
-            }
-        }
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <form id="myForm" onsubmit="validateForm(event)">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
-        <br><br>
-        <label for="cognome">Cognome:</label>
-        <input type="text" id="cognome" name="cognome">
-        <br><br>
-        <button type="submit">Invia</button>
-    </form>
+    <div class="text-center bg-blue-500 p-4">
+        Ciao a tutti!
+    </div>
 </body>
 </html>
