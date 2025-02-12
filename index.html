@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#41463D',
+                        secondary: '#9D8DF1',
+                    },
+                },
+            },
+        }
+    </script>
 </head>
 <body>
-    <div class="container mx-auto p-6 bg-white shadow-lg rounded-2xl text-center">
-        <h1 class="text-2xl font-bold text-gray-800">Benvenuto nella mia pagina</h1>
-        <p class="mt-4 text-gray-600">Questo è un semplice layout con un container centrale realizzato con Tailwind CSS.</p>
-    </div>
+    <h1 class="text-3xl font-bold underline text-primary">
+        Hello world!
+    </h1>
+    <p class="text-xl font-normal text-secondary">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, consectetur quam iure molestias quos maxime, ducimus voluptatum eius est ut quas ad mollitia hic quis omnis ullam consequatur voluptatem dolores.
+    </p>
 </body>
 </body>
 </html>
