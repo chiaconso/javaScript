@@ -9,9 +9,11 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#41463D',
-                        secondary: '#9D8DF1',
+                    spacing: {
+                        '18': '4.5rem',  // 72px
+                        '22': '5.5rem',  // 88px
+                        '26': '6.5rem',  // 104px
+                        '30': '7.5rem',  // 120px
                     },
                 },
             },
@@ -19,12 +21,10 @@
     </script>
 </head>
 <body>
-    <h1 class="text-3xl font-bold underline text-primary">
-        Hello world!
-    </h1>
-    <p class="text-xl font-normal text-secondary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, consectetur quam iure molestias quos maxime, ducimus voluptatum eius est ut quas ad mollitia hic quis omnis ullam consequatur voluptatem dolores.
-    </p>
+    <div class="bg-white p-22 m-18 rounded-lg shadow-lg text-center">
+        <h1 class="text-2xl font-bold mb-4">Benvenuto in Tailwind CSS</h1>
+        <p class="text-gray-700">Questa è una card con spacing personalizzato.</p>
+    </div>
 </body>
 </body>
 </html>
