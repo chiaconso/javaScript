@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Custom Buttons</title>
+    <title>Tailwind Custom Colors</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            light: "#4ADE80",
-                            DEFAULT: "#22C55E",
-                            dark: "#15803D",
+                        primary: {
+                            light: "#93C5FD",
+                            DEFAULT: "#3B82F6",
+                            dark: "#1E3A8A",
                         },
-                        danger: {
-                            light: "#F87171",
-                            DEFAULT: "#EF4444",
-                            dark: "#B91C1C",
+                        secondary: {
+                            light: "#FBCFE8",
+                            DEFAULT: "#EC4899",
+                            dark: "#9D174D",
                         },
-                        warning: {
-                            light: "#FACC15",
-                            DEFAULT: "#EAB308",
-                            dark: "#A16207",
+                        accent: {
+                            light: "#FDE68A",
+                            DEFAULT: "#F59E0B",
+                            dark: "#92400E",
                         },
                     },
                 },
@@ -31,24 +31,26 @@
         };
     </script>
 </head>
-<body class="p-10 flex flex-col gap-4 items-center bg-gray-100">
+<body class="p-10 bg-gray-100 flex flex-col gap-6 items-center">
 
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Pulsanti Personalizzati</h1>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Elementi con Colori Personalizzati</h1>
 
-    <!-- Pulsante Primario -->
-    <button class="bg-brand text-white px-6 py-2 rounded-lg shadow-md hover:bg-brand-dark">
-        Pulsante Verde
-    </button>
+    <!-- Div con sfondo e bordo personalizzato -->
+    <div class="bg-primary-light border-4 border-primary-dark text-primary-dark p-6 rounded-lg w-80 text-center shadow-lg">
+        <p class="font-semibold">Div con sfondo blu chiaro e bordo blu scuro</p>
+    </div>
 
-    <!-- Pulsante di Pericolo -->
-    <button class="bg-danger text-white px-6 py-2 rounded-lg shadow-md hover:bg-danger-dark">
-        Pulsante Rosso
-    </button>
+    <!-- Card con sfondo e bordo personalizzato -->
+    <div class="bg-secondary-light border-4 border-secondary-dark text-secondary-dark p-6 rounded-lg w-80 shadow-lg">
+        <h2 class="text-lg font-bold">Card Rosa</h2>
+        <p>Questa è una card con sfondo rosa chiaro e bordo rosa scuro.</p>
+    </div>
 
-    <!-- Pulsante di Avviso -->
-    <button class="bg-warning text-white px-6 py-2 rounded-lg shadow-md hover:bg-warning-dark">
-        Pulsante Giallo
-    </button>
+    <!-- Card di avviso -->
+    <div class="bg-accent-light border-4 border-accent-dark text-accent-dark p-6 rounded-lg w-80 shadow-lg">
+        <h2 class="text-lg font-bold">Card Gialla</h2>
+        <p>Questa card ha uno sfondo giallo chiaro e un bordo giallo scuro.</p>
+    </div>
 
 </body>
 </html>
