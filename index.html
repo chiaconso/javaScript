@@ -3,27 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Custom Colors</title>
+    <title>Tailwind Custom Text Colors</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            light: "#93C5FD",
-                            DEFAULT: "#3B82F6",
-                            dark: "#1E3A8A",
-                        },
-                        secondary: {
-                            light: "#FBCFE8",
-                            DEFAULT: "#EC4899",
-                            dark: "#9D174D",
-                        },
-                        accent: {
-                            light: "#FDE68A",
-                            DEFAULT: "#F59E0B",
-                            dark: "#92400E",
+                        text: {
+                            heading: "#1E3A8A",
+                            body: "#374151",
+                            link: "#EC4899",
+                            linkHover: "#9D174D",
                         },
                     },
                 },
@@ -31,26 +22,15 @@
         };
     </script>
 </head>
-<body class="p-10 bg-gray-100 flex flex-col gap-6 items-center">
+<body>
+        <h1 class="text-4xl font-bold text-text-heading">Benvenuto nel Mio Sito</h1>
+        <p class="text-lg mt-2">Un semplice layout con colori personalizzati in Tailwind CSS.</p>
 
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Elementi con Colori Personalizzati</h1>
-
-    <!-- Div con sfondo e bordo personalizzato -->
-    <div class="bg-primary-light border-4 border-primary-dark text-primary-dark p-6 rounded-lg w-80 text-center shadow-lg">
-        <p class="font-semibold">Div con sfondo blu chiaro e bordo blu scuro</p>
-    </div>
-
-    <!-- Card con sfondo e bordo personalizzato -->
-    <div class="bg-secondary-light border-4 border-secondary-dark text-secondary-dark p-6 rounded-lg w-80 shadow-lg">
-        <h2 class="text-lg font-bold">Card Rosa</h2>
-        <p>Questa è una card con sfondo rosa chiaro e bordo rosa scuro.</p>
-    </div>
-
-    <!-- Card di avviso -->
-    <div class="bg-accent-light border-4 border-accent-dark text-accent-dark p-6 rounded-lg w-80 shadow-lg">
-        <h2 class="text-lg font-bold">Card Gialla</h2>
-        <p>Questa card ha uno sfondo giallo chiaro e un bordo giallo scuro.</p>
-    </div>
+        <h2 class="text-2xl font-semibold text-text-heading mt-6">Scopri di più</h2>
+        <p class="mt-2">
+            Puoi leggere ulteriori informazioni su 
+            <a href="#" class="text-text-link font-medium hover:text-text-linkHover underline">questo link</a>.
+        </p>
 
 </body>
 </html>
