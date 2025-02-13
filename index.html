@@ -3,42 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Custom Theme</title>
+    <title>Tailwind Custom Buttons</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: "#1E40AF", // Blu personalizzato
-                        secondary: "#9333EA", // Viola personalizzato
-                        accent: "#FACC15", // Giallo personalizzato
+                        brand: {
+                            light: "#4ADE80",
+                            DEFAULT: "#22C55E",
+                            dark: "#15803D",
+                        },
+                        danger: {
+                            light: "#F87171",
+                            DEFAULT: "#EF4444",
+                            dark: "#B91C1C",
+                        },
+                        warning: {
+                            light: "#FACC15",
+                            DEFAULT: "#EAB308",
+                            dark: "#A16207",
+                        },
                     },
-                    fontFamily: {
-                        custom: ["Poppins", "sans-serif"]
-                    }
-                }
-            }
+                },
+            },
         };
     </script>
 </head>
-<body>
+<body class="p-10 flex flex-col gap-4 items-center bg-gray-100">
 
-    <!-- Stile predefinito di Tailwind -->
-    <section class="mb-10">
-        <h2 class="text-gray-900 text-2xl font-sans mb-2">Stile Predefinito</h2>
-        <div class="bg-blue-500 text-white p-4 rounded-md">Colore predefinito (blue-500)</div>
-        <div class="bg-purple-500 text-white p-4 rounded-md mt-2">Colore predefinito (purple-500)</div>
-        <div class="bg-yellow-500 text-black p-4 rounded-md mt-2">Colore predefinito (yellow-500)</div>
-    </section>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Pulsanti Personalizzati</h1>
 
-    <!-- Stile con il tema personalizzato -->
-    <section>
-        <h2 class="text-primary text-2xl font-custom mb-2">Stile Personalizzato</h2>
-        <div class="bg-primary text-white p-4 rounded-md">Colore personalizzato (primary)</div>
-        <div class="bg-secondary text-white p-4 rounded-md mt-2">Colore personalizzato (secondary)</div>
-        <div class="bg-accent text-black p-4 rounded-md mt-2">Colore personalizzato (accent)</div>
-    </section>
+    <!-- Pulsante Primario -->
+    <button class="bg-brand text-white px-6 py-2 rounded-lg shadow-md hover:bg-brand-dark">
+        Pulsante Verde
+    </button>
+
+    <!-- Pulsante di Pericolo -->
+    <button class="bg-danger text-white px-6 py-2 rounded-lg shadow-md hover:bg-danger-dark">
+        Pulsante Rosso
+    </button>
+
+    <!-- Pulsante di Avviso -->
+    <button class="bg-warning text-white px-6 py-2 rounded-lg shadow-md hover:bg-warning-dark">
+        Pulsante Giallo
+    </button>
 
 </body>
 </html>
