@@ -3,38 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerarchia di Stili con Tailwind</title>
+  <title>Layout Flex con 3 Colonne</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-4">
 
-  <!-- Wrapper principale con stili di base -->
-  <div class="bg-white p-6 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold text-center text-blue-600">Titolo Principale</h1>
+  <!-- Container Flex per 3 colonne -->
+  <div class="flex flex-row gap-4">
 
-    <!-- Sezione interna con uno stile diverso -->
-    <div class="bg-gray-50 p-4 rounded-lg mt-4">
-      <h2 class="text-xl font-semibold text-gray-800">Sezione Interna</h2>
-      
-      <!-- Paragrafo con stili personalizzati a livello di elemento -->
-      <p class="text-base text-gray-600 mt-2">Questo è un paragrafo con un font di dimensione base e colore grigio chiaro.</p>
-      
-      <!-- Paragrafo con uno stile personalizzato da una classe -->
-      <p class="text-lg font-medium text-green-500 mt-4">Paragrafo con uno stile personalizzato: colore verde e testo più grande.</p>
-      
-      <!-- Una lista con un proprio stile -->
-      <ul class="list-disc pl-6 mt-4 text-sm text-purple-500">
-        <li>Voce 1</li>
-        <li>Voce 2</li>
-        <li>Voce 3</li>
-      </ul>
-
-      <!-- Una div con stili che vanno a sovrascrivere quelli del genitore -->
-      <div class="bg-blue-100 p-4 rounded-lg mt-4">
-        <h3 class="text-lg font-medium text-blue-700">Sezione Con Stili Specifici</h3>
-        <p class="text-sm text-gray-700 mt-2">Questa sezione ha il proprio stile che sovrascrive alcuni stili del genitore.</p>
-      </div>
+    <!-- Colonna 1 -->
+    <div class="flex-1 bg-blue-500 p-6 text-white rounded-lg">
+      <h2 class="text-2xl font-bold">Colonna 1</h2>
+      <p>Contenuto della colonna 1.</p>
     </div>
+
+    <!-- Colonna 2 -->
+    <div class="flex-1 bg-green-500 p-6 text-white rounded-lg">
+      <h2 class="text-2xl font-bold">Colonna 2</h2>
+      <p>Contenuto della colonna 2.</p>
+    </div>
+
+    <!-- Colonna 3 -->
+    <div class="flex-1 bg-red-500 p-6 text-white rounded-lg">
+      <h2 class="text-2xl font-bold">Colonna 3</h2>
+      <p>Contenuto della colonna 3.</p>
+    </div>
+
+  </div>
+
+  <!-- Layout Flex in Colonna (mobile view) -->
+  <div class="flex flex-col gap-4 mt-8">
+
+    <!-- Colonna in vista mobile -->
+    <div class="flex-1 bg-yellow-500 p-6 text-white rounded-lg">
+      <h2 class="text-2xl font-bold">Colonna 1 (Mobile)</h2>
+      <p>Contenuto della colonna 1 in formato colonna.</p>
+    </div>
+
+    <!-- Colonna in vista mobile -->
+    <div class="flex-1 bg-purple-500 p-6 text-white rounded-lg">
+      <h2 class="text-2xl font-bold">Colonna 2 (Mobile)</h2>
+      <p>Contenuto della colonna 2 in formato colonna.</p>
+    </div>
+
+    <!-- Colonna in vista mobile -->
+    <div class="flex-1 bg-indigo-500 p-6 text-white rounded-lg">
+      <h2 class="text-2xl font-bold">Colonna 3 (Mobile)</h2>
+      <p>Contenuto della colonna 3 in formato colonna.</p>
+    </div>
+
   </div>
 
 </body>
