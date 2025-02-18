@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Mode con Tailwind</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #1a202c;
-                --text-color: #f7fafc;
-                --button-bg: #2d3748;
-                --button-hover: #4a5568;
+    <script>
+        function toggleDarkMode() {
+            const htmlElement = document.documentElement;
+            if (htmlElement.classList.contains("dark")) {
+                htmlElement.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            } else {
+                htmlElement.classList.add("dark");
+                localStorage.setItem("theme", "dark");
             }
         }
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #ffffff;
-                --text-color: #1a202c;
-                --button-bg: #e2e8f0;
-                --button-hover: #cbd5e0;
-            }
+        
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+    <style>
+        .dark {
+            --bg-color: #1a202c;
+            --text-color: #f7fafc;
+            --button-bg: #2d3748;
+            --button-hover: #4a5568;
+        }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a202c;
+            --button-bg: #e2e8f0;
+            --button-hover: #cbd5e0;
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen" style="background-color: var(--bg-color); color: var(--text-color);">
-    <button class="p-3 rounded-full transition" style="background-color: var(--button-bg);" onmouseover="this.style.backgroundColor= 'var(--button-hover)'" onmouseout="this.style.backgroundColor='var(--button-bg)'">
+<body class="flex flex-col items-center justify-center min-h-screen transition-colors" style="background-color: var(--bg-color); color: var(--text-color);">
+    <button onclick="toggleDarkMode()" class="p-3 rounded-full transition" style="background-color: var(--button-bg);" onmouseover="this.style.backgroundColor= 'var(--button-hover)'" onmouseout="this.style.backgroundColor='var(--button-bg)'">
         🌙
     </button>
-    <h1 class="text-3xl font-bold mt-5">Dark Mode Automatica</h1>
-    <p class="mt-2 text-lg">Il tema cambia automaticamente in base alle preferenze di sistema!</p>
+    <h1 class="text-3xl font-bold mt-5">Dark Mode</h1>
+    <p class="mt-2 text-lg">Clicca il pulsante per cambiare modalità!</p>
 </body>
 </html>
