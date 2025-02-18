@@ -3,46 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Dark Mode</title>
+    <title>Dark Mode con Tailwind</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "media", // Cambia automaticamente in base al sistema
-            theme: {
-                extend: {
-                    colors: {
-                        light: {
-                            bg: "#F9FAFB",
-                            text: "#111827",
-                            card: "#FFFFFF",
-                        },
-                        dark: {
-                            bg: "#1F2937",
-                            text: "#F3F4F6",
-                            card: "#374151",
-                        },
-                    },
-                },
-            },
-        };
-    </script>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a202c;
+                --text-color: #f7fafc;
+                --button-bg: #2d3748;
+                --button-hover: #4a5568;
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #ffffff;
+                --text-color: #1a202c;
+                --button-bg: #e2e8f0;
+                --button-hover: #cbd5e0;
+            }
+        }
+    </style>
 </head>
-<body class="bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text min-h-screen flex flex-col items-center justify-center p-10">
-
-    <header class="text-center">
-        <h1 class="text-4xl font-bold">Modalità Scura Automatica</h1>
-        <p class="text-lg mt-2">Questa pagina cambia stile automaticamente in base alle impostazioni del sistema.</p>
-    </header>
-
-    <main class="mt-6 w-full max-w-md">
-        <div class="p-6 rounded-lg shadow-lg bg-light-card text-light-text dark:bg-dark-card dark:text-dark-text">
-            <h2 class="text-2xl font-semibold">Benvenuto!</h2>
-            <p class="mt-2">
-                Se il tuo sistema è in modalità scura, questa pagina si adatterà automaticamente. 
-                Prova a cambiare le impostazioni del tuo sistema per vedere l'effetto!
-            </p>
-        </div>
-    </main>
-
+<body class="flex flex-col items-center justify-center min-h-screen" style="background-color: var(--bg-color); color: var(--text-color);">
+    <button class="p-3 rounded-full transition" style="background-color: var(--button-bg);" onmouseover="this.style.backgroundColor= 'var(--button-hover)'" onmouseout="this.style.backgroundColor='var(--button-bg)'">
+        🌙
+    </button>
+    <h1 class="text-3xl font-bold mt-5">Dark Mode Automatica</h1>
+    <p class="mt-2 text-lg">Il tema cambia automaticamente in base alle preferenze di sistema!</p>
 </body>
 </html>
