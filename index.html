@@ -37,10 +37,17 @@
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen transition-colors" style="background-color: var(--bg-color); color: var(--text-color);">
-    <button onclick="toggleDarkMode()" class="p-3 rounded-full transition" style="background-color: var(--button-bg);" onmouseover="this.style.backgroundColor= 'var(--button-hover)'" onmouseout="this.style.backgroundColor='var(--button-bg)'">
+    <button onclick="toggleDarkMode()" class="p-3 rounded-full transition bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600">
         🌙
     </button>
     <h1 class="text-3xl font-bold mt-5">Dark Mode</h1>
     <p class="mt-2 text-lg">Clicca il pulsante per cambiare modalità!</p>
+    
+    <div class="mt-5 space-x-4">
+        <button class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-700">Pulsante Blu</button>
+        <button class="px-4 py-2 rounded bg-red-500 text-white hover:bg-red-700">Pulsante Rosso</button>
+        <button class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-700">Pulsante Verde</button>
+        <button class="px-4 py-2 rounded bg-yellow-500 text-white hover:bg-yellow-700">Pulsante Giallo</button>
+    </div>
 </body>
 </html>
